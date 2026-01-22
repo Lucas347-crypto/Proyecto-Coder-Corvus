@@ -1,0 +1,483 @@
+// ============================================
+// CORVUS MOTORS - ESTILOS SASS SIMPLIFICADO
+// ============================================
+
+// --- VARIABLES ---
+$color-primary: #3498db;
+$color-secondary: #2ecc71;
+$color-dark: #2c3e50;
+$color-darker: #34495e;
+$color-light: #f8f9fa;
+$color-white: #ffffff;
+$color-muted: #6c757d;
+
+$font-primary: "Merriweather", serif;
+$font-secondary: "Montserrat", sans-serif;
+
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+$shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 5px 15px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+$shadow-xl: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+$border-radius-sm: 5px;
+$border-radius-md: 10px;
+$border-radius-lg: 15px;
+
+// --- MIXIN SIMPLE PARA RESPONSIVE ---
+@mixin responsive-tablet {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin responsive-mobile {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+// ============================================
+// RESET BÁSICO
+// ============================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+main, section {
+    flex: 1;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+// ============================================
+// HEADER
+// ============================================
+
+.header-principal {
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logo-header {
+    width: 250px;
+    height: auto;
+    transition: transform $transition-normal;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    @include responsive-tablet {
+        width: 80px;
+    }
+
+    @include responsive-mobile {
+        width: 70px;
+    }
+}
+
+// ============================================
+// NAVEGACIÓN
+// ============================================
+
+.nav-link {
+    color: $color-dark !important;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 1rem !important;
+    transition: all $transition-normal;
+    border-radius: $border-radius-sm;
+    position: relative;
+
+    &:hover {
+        color: $color-primary !important;
+        background-color: rgba($color-primary, 0.1);
+    }
+
+    &.active {
+        color: $color-primary !important;
+        font-weight: 700;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background-color: $color-primary;
+            border-radius: 2px;
+        }
+    }
+
+    @include responsive-tablet {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem !important;
+    }
+
+    @include responsive-mobile {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem !important;
+    }
+}
+
+// ============================================
+// TÍTULOS DE SECCIÓN
+// ============================================
+
+.titulo-seccion {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $color-dark;
+    font-family: $font-secondary;
+
+    @include responsive-tablet {
+        font-size: 2rem;
+    }
+
+    @include responsive-mobile {
+        font-size: 1.75rem;
+    }
+}
+
+.linea-titulo {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, $color-primary, $color-secondary);
+    border-radius: 2px;
+}
+
+// ============================================
+// SECCIONES
+// ============================================
+
+.quienes-somos {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding-top: 100px;
+    width: 100%;
+    margin: 0;
+
+    .card {
+        transition: transform $transition-normal, box-shadow $transition-normal;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: $shadow-md;
+        }
+    }
+
+    @include responsive-mobile {
+        padding-top: 80px;
+    }
+}
+
+.ultimos-ingresos {
+    background-color: rgba($color-light, 0.95);
+    width: 100%;
+    margin: 0;
+}
+
+// ============================================
+// FEATURE BOXES
+// ============================================
+
+.feature-box {
+    background-color: $color-light;
+    border-radius: $border-radius-md;
+    transition: all $transition-normal;
+
+    &:hover {
+        background-color: $color-white;
+        box-shadow: $shadow-md;
+        transform: translateY(-5px);
+    }
+
+    @include responsive-mobile {
+        margin-bottom: 1rem;
+    }
+}
+
+// ============================================
+// TARJETAS DE AUTOS
+// ============================================
+
+.card-auto {
+    transition: all $transition-normal;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: $shadow-xl;
+
+        .card-img-wrapper img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.card-img-wrapper {
+    height: 300px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform $transition-slow;
+    }
+
+    @include responsive-tablet {
+        height: 250px;
+    }
+
+    @include responsive-mobile {
+        height: 200px;
+    }
+}
+
+// Tarjetas genéricas con hover
+.card {
+    transition: all $transition-normal;
+    
+    &.shadow-sm, &.shadow {
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: $shadow-lg !important;
+        }
+    }
+}
+
+// Badges con animación
+.badge {
+    transition: all $transition-normal;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// ============================================
+// LISTA DE ESPECIFICACIONES
+// ============================================
+
+.specs-list {
+    li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.95rem;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+// ============================================
+// BOTONES
+// ============================================
+
+.btn {
+    transition: all $transition-normal;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-sm;
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.card-auto {
+    .btn-dark:hover {
+        background-color: #000;
+        transform: scale(1.02);
+    }
+
+    .btn-outline-secondary:hover {
+        background-color: #6c757d;
+        color: $color-white;
+        border-color: #6c757d;
+    }
+}
+
+.btn-primary {
+    &:hover {
+        background-color: darken($color-primary, 10%);
+        border-color: darken($color-primary, 10%);
+    }
+}
+
+.btn-outline-primary {
+    &:hover {
+        background-color: $color-primary;
+        border-color: $color-primary;
+        color: $color-white;
+    }
+}
+
+.btn-outline-dark {
+    &:hover {
+        background-color: $color-dark;
+        border-color: $color-dark;
+        color: $color-white;
+    }
+}
+
+.btn-outline-warning {
+    &:hover {
+        background-color: #f39c12;
+        border-color: #f39c12;
+        color: $color-white;
+    }
+}
+
+// ============================================
+// FOOTER
+// ============================================
+
+.footer-principal {
+    background: linear-gradient(135deg, $color-dark 0%, $color-darker 100%);
+    border-top: 3px solid $color-primary;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 3rem 0 2rem 0;
+    margin-top: auto;
+    margin-bottom: 0;
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    .footer-info {
+        p {
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            
+            &.slogan {
+                font-style: italic;
+                color: rgba(255, 255, 255, 0.6);
+                margin-top: 0.5rem;
+            }
+        }
+    }
+    
+    .footer-links {
+        h5 {
+            color: $color-white;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        ul {
+            li {
+                margin-bottom: 0.5rem;
+                
+                a {
+                    color: rgba(255, 255, 255, 0.7);
+                    transition: all $transition-normal;
+                    display: inline-block;
+                    
+                    &:hover {
+                        color: $color-primary;
+                        transform: translateX(5px);
+                    }
+                }
+            }
+        }
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        
+        p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.redes-sociales {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.enlace-red {
+    display: inline-block;
+    transition: transform $transition-normal;
+
+    &:hover {
+        transform: scale(1.2) rotate(5deg);
+
+        .icono-red {
+            box-shadow: 0 5px 15px rgba($color-primary, 0.5);
+        }
+    }
+}
+
+
+.icono-red {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    transition: all $transition-normal;
+
+    @include responsive-mobile {
+        width: 40px;
+        height: 40px;
+    }
+}
