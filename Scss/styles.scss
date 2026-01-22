@@ -1,6 +1,3 @@
-// ============================================
-// CORVUS MOTORS - ESTILOS SASS SIMPLIFICADO
-// ============================================
 
 // --- VARIABLES ---
 $color-primary: #3498db;
@@ -26,7 +23,7 @@ $border-radius-sm: 5px;
 $border-radius-md: 10px;
 $border-radius-lg: 15px;
 
-// --- MIXIN SIMPLE PARA RESPONSIVE ---
+// ---RESPONSIVE ---
 @mixin responsive-tablet {
     @media (max-width: 768px) {
         @content;
@@ -39,9 +36,9 @@ $border-radius-lg: 15px;
     }
 }
 
-// ============================================
+
 // RESET BÁSICO
-// ============================================
+
 
 * {
     margin: 0;
@@ -88,9 +85,8 @@ a {
     text-decoration: none;
 }
 
-// ============================================
 // HEADER
-// ============================================
+
 
 .header-principal {
     backdrop-filter: blur(10px);
@@ -115,9 +111,8 @@ a {
     }
 }
 
-// ============================================
 // NAVEGACIÓN
-// ============================================
+
 
 .nav-link {
     color: $color-dark !important;
@@ -161,9 +156,7 @@ a {
     }
 }
 
-// ============================================
 // TÍTULOS DE SECCIÓN
-// ============================================
 
 .titulo-seccion {
     font-size: 2.5rem;
@@ -187,9 +180,7 @@ a {
     border-radius: 2px;
 }
 
-// ============================================
 // SECCIONES
-// ============================================
 
 .quienes-somos {
     background-color: rgba(255, 255, 255, 0.95);
@@ -217,9 +208,9 @@ a {
     margin: 0;
 }
 
-// ============================================
-// FEATURE BOXES
-// ============================================
+
+// BOXES
+
 
 .feature-box {
     background-color: $color-light;
@@ -237,9 +228,8 @@ a {
     }
 }
 
-// ============================================
 // TARJETAS DE AUTOS
-// ============================================
+
 
 .card-auto {
     transition: all $transition-normal;
@@ -297,9 +287,8 @@ a {
     }
 }
 
-// ============================================
 // LISTA DE ESPECIFICACIONES
-// ============================================
+
 
 .specs-list {
     li {
@@ -313,9 +302,8 @@ a {
     }
 }
 
-// ============================================
+
 // BOTONES
-// ============================================
 
 .btn {
     transition: all $transition-normal;
@@ -374,9 +362,7 @@ a {
     }
 }
 
-// ============================================
 // FOOTER
-// ============================================
 
 .footer-principal {
     background: linear-gradient(135deg, $color-dark 0%, $color-darker 100%);
