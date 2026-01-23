@@ -236,7 +236,9 @@ a {
     }
 }
 
-/* MÓVIL */
+/* movil */
+
+
 
 @media (max-width: 576px) {
     .logo-header {
